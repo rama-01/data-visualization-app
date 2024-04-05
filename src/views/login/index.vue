@@ -26,23 +26,7 @@
       </div>
     </div>
 
-    <vue-particles
-      color="#6495ED"
-      :particleOpacity="0.7"
-      :particlesNumber="80"
-      shapeType="circle"
-      :particleSize="4"
-      linesColor="#6495ED"
-      :linesWidth="1"
-      :lineLinked="true"
-      :lineOpacity="0.6"
-      :linesDistance="150"
-      :moveSpeed="3"
-      :hoverEffect="true"
-      hoverMode="grab"
-      :clickEffect="true"
-      clickMode="push"
-    ></vue-particles>
+    <vue-particles id="loginParticles" :options="options3" style="height: 100vh"></vue-particles>
 
     <!-- <bgAnimation /> -->
 
@@ -51,6 +35,9 @@
 </template>
 
 <!-- use options API -->
+<script setup>
+import { options3 } from '@/utils/particles'
+</script>
 <script>
 export default {
   name: 'Login',
@@ -88,6 +75,7 @@ export default {
       this.visible = false
       console.log('点击确定')
     },
+    particlesInit() {},
   },
 }
 </script>

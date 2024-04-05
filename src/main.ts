@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { setupRouter } from './router'
-import VueParticles from 'vue-particles'
+import Particles from '@tsparticles/vue3'
+import { loadSlim } from '@tsparticles/slim'
 import '@/assets/styles/index.scss'
 
 const setupAll = () => {
@@ -9,7 +10,11 @@ const setupAll = () => {
 
   setupRouter(app)
 
-  app.component('VueParticles', VueParticles)
+  app.use(Particles, {
+    init: async (engine) => {
+      await loadSlim(engine)
+    },
+  })
 
   app.mount('#app')
 }
