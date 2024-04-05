@@ -1,14 +1,17 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import { setupRouter } from "./router";
-import "@/assets/styles/index.css";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { setupRouter } from './router'
+import VueParticles from 'vue-particles'
+import '@/assets/styles/index.scss'
 
 const setupAll = () => {
-  const app = createApp(App);
+  const app = createApp(App)
 
-  setupRouter(app);
+  setupRouter(app)
 
-  app.mount("#app");
-};
+  app.component('VueParticles', VueParticles)
 
-setupAll();
+  app.mount('#app')
+}
+
+setupAll()

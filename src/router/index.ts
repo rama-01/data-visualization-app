@@ -1,17 +1,27 @@
 import { App } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/login',
-    name: 'Login',
-    component: () => import('@/views/login/index.vue'),
+    path: '',
+    redirect: '/login',
+    children: [
+      {
+        path: 'login',
+        name: 'Login',
+        component: () => import('@/views/login/index.vue'),
+      },
+    ],
+  },
+  {
+    path: '/home',
+    component: () => import('@/views/home/index.vue'),
   },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
+  routes: routes as RouteRecordRaw[],
 })
 
 export const setupRouter = (app: App<Element>) => {
