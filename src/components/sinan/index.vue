@@ -108,6 +108,7 @@ export default {
     }
   },
   mounted() {
+    // console.log(this);
     setTimeout(() => {
       this.number = 0
       this.initData()
