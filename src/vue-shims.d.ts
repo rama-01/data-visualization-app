@@ -6,9 +6,5 @@ declare module '*.vue' {
   export default componentOptions
 }
 
-/* declare module "vue" {
-  interface Vue {
-    $confirm: ElMessageBoxShortcutMethod;
-  }
-}
- */
+// 解决引入模块的报错提示
+declare module '@/plugins/index.ts'

@@ -1,5 +1,5 @@
 import * as echarts from 'echarts/core'
-import { BarChart, LineChart,GaugeChart } from 'echarts/charts'
+import { BarChart, LineChart, GaugeChart } from 'echarts/charts'
 import {
   TitleComponent,
   TooltipComponent,
@@ -47,9 +47,7 @@ echarts.use([
   LabelLayout,
   UniversalTransition,
   CanvasRenderer,
-  GaugeChart
+  GaugeChart,
 ])
 
 export default echarts
-
-
