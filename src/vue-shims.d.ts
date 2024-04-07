@@ -8,3 +8,5 @@ declare module '*.vue' {
 
 // 解决引入模块的报错提示
 declare module '@/plugins/index.ts'
+declare module '@/assets/js/*'
+// declare module 'jquery'

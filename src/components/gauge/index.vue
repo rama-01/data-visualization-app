@@ -2,11 +2,12 @@
   <div id="chart_gauge" class="w-40 h-40"></div>
 </template>
 <script lang="ts" setup>
-const { proxy } = getCurrentInstance() as any
+defineOptions({ name: 'Gauge' })
 
+const { proxy } = getCurrentInstance() as any
 let timer: number
 const getEchart = () => {
-  let myChart = proxy.$echarts.init(document.getElementById('chart_gauge'))
+  let gaugeChart = proxy.$echarts.init(document.getElementById('chart_gauge'))
   const option = {
     tooltip: {
       formatter: '{a} <br/>{c} {b}',
@@ -100,15 +101,15 @@ const getEchart = () => {
       },
     ],
   }
-  myChart.setOption(option)
+  gaugeChart.setOption(option)
 
   window.addEventListener('resize', () => {
-    myChart.resize()
+    gaugeChart.resize()
   })
 
   timer = setInterval(() => {
     option.series[0].data[0].value = Number((Math.random() * 100).toFixed(2))
-    myChart.setOption(option)
+    gaugeChart.setOption(option)
   }, 2000) as unknown as number
 }
 

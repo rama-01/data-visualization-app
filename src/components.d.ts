@@ -7,9 +7,10 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Gauge: typeof import('./components/gauge/index.vue')['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
-    Seamless: typeof import('./components/seamless/index.vue')['default']
+    Gauge: (typeof import('./components/gauge/index.vue'))['default']
+    RouterLink: (typeof import('vue-router'))['RouterLink']
+    RouterView: (typeof import('vue-router'))['RouterView']
+    Seamless: (typeof import('./components/seamless/index.vue'))['default']
+    Sinan: (typeof import('./components/sinan/index.vue'))['default']
   }
 }
